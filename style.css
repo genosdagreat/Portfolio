@@ -3,16 +3,28 @@ html{
     width: 100%;
     margin: 0px;
     padding: 0px;
+    font-size:100%;
 }
 body{
     font-family: 'Sintony', sans-serif;
     margin: 0px;
     padding: 0px;
 }
+.column {
+    width: 100%;
+  }
+  
+  @media (min-width: 600px) {
+    .column {
+      width: 50%;
+    }
+  }
 .page-container {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap;
+    flex-basis: 338%;
     background-color: #fcde67;
     height: 100vh;
     width: 100%;
@@ -24,10 +36,11 @@ header{
     text-align: center;
 }
 .page-container-image{
-    max-height: 350px;
+    max-width: 100%; 
+    height: auto;
     display: flex;
 }
-.page-contaner-heading {
+.page-container-heading {
     text-transform: uppercase;
     color : #030e12;
     text-align: center;
@@ -36,7 +49,7 @@ header{
     letter-spacing:  10px;
     
 }
-.page-contaner-paragraph{
+.page-container-paragraph{
     text-transform: uppercase;
     font-weight: 600;
     color : #030e12;
@@ -88,6 +101,8 @@ background: linear-gradient(90deg, rgba(91,204,246,1) 0%, rgba(91,204,246,1) 37%
     letter-spacing:  10px;
 }
 .main-container-image{
+    max-width: 100%; 
+    height: auto;
     display: flex;
 }
 .skills{
@@ -160,7 +175,6 @@ background: linear-gradient(90deg, rgba(91,204,246,1) 0%, rgba(91,204,246,1) 37%
     position: fixed;
     top: 0px;
     height: 100px;
-    line-height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -172,7 +186,7 @@ background: linear-gradient(90deg, rgba(91,204,246,1) 0%, rgba(91,204,246,1) 37%
     font-weight: 600;
     color: #5bccf6;
     color : #030e12;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .nav-images{
@@ -341,3 +355,45 @@ about .info {
     width: 70%;
 }
 
+
+
+@media screen and (max-width: 1000px) {
+    .project-container .project-container-content  img, .main-container .main-container-content img {
+      max-width: 400px;
+    }
+    
+    .page-container-heading, .main-container-heading, .project-container-heading {
+      font-size: 48px;
+    }
+    .page-container-paragraph {
+        font-size: 24px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+      .nav-logo .nav-images {
+          font-size: 14px;
+      }
+      .main-container-content, .project-container-content{
+          flex-direction: column;
+      }
+      .project-container .project-container-content  img, .main-container .main-container-content img , .page-container img {
+        max-width: 280px;
+      }
+      .main-container-content{
+          margin: 10px 0 10px 0;
+      }
+      .main-container-heading{
+          font-size: 38px;
+      }
+      .project-container-heading{
+         font-size: 38px;
+         margin: 150px 0 0px 0;
+      }
+      .main-container-content .skills{
+        font-size:30px;
+      }
+      .project-container-content .projects{
+          font-size: 30px;
+      }
+  }
